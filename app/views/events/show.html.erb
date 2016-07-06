@@ -1,0 +1,10 @@
+<h1><%= @event.title %></h1>
+<h3>host: <%= @event.creator.name %> </h3>
+<p><%= @event.description %></p>
+<button class="btn btn-primary">Attend this event</button>
+<h3>event attendees:</h3>
+<ul>
+  <% @attendees.each do |attendee| %>
+    <li><%= attendee.name %></li>
+  <% end %>
+</ul>
