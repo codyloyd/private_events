@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(name: params[:user][:name], email: params[:user][:email])
     if @user.save
       flash[:success] = "Account Created"
-      redirect_to root_url
+      log_in @user
+      redirect_to @user
     else
       flash.now[:error] = "oops, something broke (try again)"
       render 'new'
@@ -15,5 +16,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+  end
+
+  def index
+    @users = User.all
   end
 end
