@@ -1,7 +1,13 @@
 <h1><%= @event.title %></h1>
 <h3>host: <%= @event.creator.name %> </h3>
 <p><%= @event.description %></p>
-<button class="btn btn-primary">Attend this event</button>
+<h3>location:</h3>
+<p><%= @event.location %></p>
+<% if @event.date %>
+  <h3>date:</h3>
+  <p><%= time_tag @event.date %></p>
+<% end %>
+<a href=<%= attend_event_url(@event) %>><button class="btn btn-primary">Attend this event</button></a>
 <h3>event attendees:</h3>
 <ul>
   <% @attendees.each do |attendee| %>

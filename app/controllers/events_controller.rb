@@ -7,6 +7,8 @@ class EventsController < ApplicationController
     event = current_user.events_created.build
     event.title = params[:event][:title]
     event.description = params[:event][:description]
+    event.location = params[:event][:location]
+    event.date = params[:event][:date]
     if event.save
       redirect_to event
     else
