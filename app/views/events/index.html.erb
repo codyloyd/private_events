@@ -1,8 +1,20 @@
 <div class="col-md-6 col-md-offset-3">
-  <h1>All Events</h1>
+  <h1>Upcoming Events</h1>
   <ul class="list events">
-    <% @events.each do |event| %>
-      <li><%= link_to event.title, event %></li>
+    <% @upcoming_events.each do |event| %>
+      <li><%= link_to event.title , event %>
+           |
+          <%= link_to event.date.strftime("%b %e, %Y"), event %>
+      </li>
+    <% end %>
+  </ul>
+  <h1>Past Events</h1>
+  <ul class="list events">
+    <% @past_events.each do |event| %>
+      <li><%= link_to event.title, event %>
+      |
+     <%= link_to event.date.strftime("%b %e, %Y"), event %>
+   </li>
     <% end %>
   </ul>
 </div>
