@@ -13,9 +13,17 @@
     </ul>
   </div>
   <div class="col-md-4">
-    <h2>events attending:</h2>
+    <h2>upcoming events:</h2>
     <ul class="list">
-      <% @events_attending.each do |event| %>
+      <% @upcoming_events.each do |event| %>
+      <li>
+        <%= link_to event.title, event %>
+      </li>
+      <% end %>
+    </ul>
+    <h2>past events:</h2>
+    <ul class="list">
+      <% @past_events.each do |event| %>
       <li>
         <%= link_to event.title, event %>
       </li>

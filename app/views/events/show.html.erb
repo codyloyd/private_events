@@ -7,7 +7,11 @@
   <h3>date:</h3>
   <p><%= time_tag @event.date %></p>
 <% end %>
+<% unless @attendees.include?(current_user) %>
 <a href=<%= attend_event_url(@event) %>><button class="btn btn-primary">Attend this event</button></a>
+<% else %>
+<h3>you are attending this event</h3>
+<% end %>
 <h3>event attendees:</h3>
 <ul>
   <% @attendees.each do |attendee| %>

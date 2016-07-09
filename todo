@@ -1,0 +1,9 @@
+fix the fact that users can attend a party more than once
+
+make the views suck less (displaying parties specifically)
+
+add validations for events
+
+add format validations for date
+
+add a view for flash messages
